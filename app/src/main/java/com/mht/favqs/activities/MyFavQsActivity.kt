@@ -86,7 +86,7 @@ class MyFavQsActivity : AppCompatActivity(), Observer<FavQuotesResponse>, CdsRec
         }
     }
 
-    fun goToMyProfile() {
+    fun goToMyProfile(v:View) {
         val intent = MyProfileActivity.newIntent(this)
         startActivity(intent)
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)

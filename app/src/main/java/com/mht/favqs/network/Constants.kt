@@ -5,5 +5,8 @@ class Constants {
         const val APP_TOKEN = "36856d15700559497d7f59a76f6a8160"
         const val ACCESS_TOKEN = "accessToken"
         const val LOGIN = "login"
+        const val BASE_URL = "https://favqs.com/api/"
+
+
     }
 }

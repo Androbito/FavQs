@@ -1,11 +1,12 @@
 package com.mht.favqs.model
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
-
+@JsonClass(generateAdapter = true)
 data class FavQuotesResponse(
-        @SerializedName("page") val page: Int,
-        @SerializedName("last_page") val lastPage: Boolean,
-        @SerializedName("quotes") val quotes: List<Quote>
+        val page: Int,
+        @Json(name = "last_page") val lastPage: Boolean,
+        val quotes: List<Quote>
 )
 

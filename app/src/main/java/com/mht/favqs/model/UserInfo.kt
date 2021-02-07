@@ -1,19 +1,20 @@
 package com.mht.favqs.model
-import com.google.gson.annotations.SerializedName
 
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
-
+@JsonClass(generateAdapter = true)
 data class UserInfo(
-    @SerializedName("login") val login: String,
-    @SerializedName("pic_url") val picUrl: String,
-    @SerializedName("public_favorites_count") val publicFavoritesCount: Int,
-    @SerializedName("following") val following: Int,
-    @SerializedName("followers") val followers: Int,
-    @SerializedName("pro") val pro: Boolean,
-    @SerializedName("account_details") val accountDetails: AccountDetails
+        val login: String,
+        @Json(name = "pic_url") val picUrl: String,
+        @Json(name = "public_favorites_count") val publicFavoritesCount: Int,
+        val following: Int,
+        val followers: Int,
+        val pro: Boolean,
+        @Json(name = "account_details") val accountDetails: AccountDetails
 )
-
+@JsonClass(generateAdapter = true)
 data class AccountDetails(
-    @SerializedName("email") val email: String,
-    @SerializedName("private_favorites_count") val privateFavoritesCount: Int
+        val email: String,
+        @Json(name = "private_favorites_count") val privateFavoritesCount: Int
 )
